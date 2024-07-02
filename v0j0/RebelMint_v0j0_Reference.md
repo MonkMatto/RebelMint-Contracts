@@ -1,9 +1,9 @@
 # RebelMint Contract Version 0 JSON 0 Notes
 
 template deployments:
-Base Sepolia: 
+Base Sepolia: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
 
-Base Mainnet: 
+Base Mainnet: 0x69Cc263973b1b22F7d81C5Be880A27CAd4c4E0De
 
 ## Compilation Settings
 Use compiler 0.8.26+commit.8a97fa7a
