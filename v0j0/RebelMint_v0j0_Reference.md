@@ -1,14 +1,36 @@
 # RebelMint Contract Version 0 JSON 0 Notes
 
-template deployments:
-Base Sepolia: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+## Template Deployments:
+Etheruem Sepolia: 0xf2e310dE333A451203761fEf3f29F5228a7bE91c
+Ethereum Mainnet: 
 
+Base Sepolia: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
 Base Mainnet: 0x69Cc263973b1b22F7d81C5Be880A27CAd4c4E0De
+
+Optimism Sepolia:
+Optimism Mainnet:
+
+Shape Mainnet:
+Shape Sepolia:
+
+Arbitrum Sepolia:
+Arbitrum Mainnet:
+
+Abstract Sepolia:
+Abstract Mainnet:
+
+Polygon Sepolia:
+Polygon Mainnet:
 
 ## Compilation Settings
 Use compiler 0.8.26+commit.8a97fa7a
 Use compiler EVM Version: cancun, optimization enabled at 200 runs
 
+
+## Contract Verification
+After a template contract is deployed and verified on a chain, explorers should auto-verify new contracts deployed to that chain.
+To verify the first contract - or if autoverify fails, use the Flattened.sol file and the above Compilation Settings.
+Deployed Bytecode from the verified contract should match the DeployedBytecodeReference.
 
 ## JSON Data Returned From Contract
 (test data from existing collections)
