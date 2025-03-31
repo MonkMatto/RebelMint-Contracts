@@ -1,30 +1,88 @@
 # RebelMint Contract Version 0 JSON 0 Notes
 
-## Template Deployments:
-Etheruem Sepolia: 0xf2e310dE333A451203761fEf3f29F5228a7bE91c
-Ethereum Mainnet: 
+## Template Deployments
+### Ethereum
+Testnet: 0xBb657C226D81F967F5C9133a1663d47E9B73981B
+  ID: 11155111
+  Name: ethereum-testnet-sepolia
+  Explorer: https://sepolia.etherscan.io/
+Mainnet: 0x9763141Aa64d07741b0263d8cFb273119adB839a
+  ID: 1 (0x1)
+  Name: ethereum-mainnet
+  Explorer: https://etherscan.io/
 
-Base Sepolia: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
-Base Mainnet: 0x69Cc263973b1b22F7d81C5Be880A27CAd4c4E0De
 
-Optimism Sepolia:
-Optimism Mainnet:
+### Base
+Testnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+  ID: 84532 (0x14a34)
+  Name: base-testnet-sepolia
+  Explorer: https://sepolia.basescan.org/
+Mainnet: 0x69Cc263973b1b22F7d81C5Be880A27CAd4c4E0De
+  ID: 8453 (0x2105)
+  Name: base-mainnet
+  Explorer: https://basescan.org/
 
-Shape Mainnet:
-Shape Sepolia:
 
-Arbitrum Sepolia:
-Arbitrum Mainnet:
+### Optimism
+Testnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+  ID: 11155420 (0xaa37dc)
+  Name: op-testnet-sepolia
+  Explorer: https://sepolia-optimism.etherscan.io/
+Mainnet: 0x42F6728AD23128F26248BF15F89526914b0B03aF
+  ID: 10 (0xa)
+  Name: op-mainnet
+  Explorer: https://optimistic.etherscan.io/
 
-Abstract Sepolia:
-Abstract Mainnet:
 
-Polygon Sepolia:
-Polygon Mainnet:
+### Shape
+Testnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+  ID: 11011 (0x2b03)
+  Name: shape-testnet-sepolia
+  Explorer: https://explorer-sepolia.shape.network/
+Mainnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+  ID: 360 (0x168)
+  Name: shape-mainnet
+  Explorer: https://shapescan.xyz/
 
-## Compilation Settings
-Use compiler 0.8.26+commit.8a97fa7a
-Use compiler EVM Version: cancun, optimization enabled at 200 runs
+
+### Arbitrum 
+Testnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+  ID: 421614 (0x66eee)
+  Name: arbitrum-testnet-sepolia
+  Explorer: https://sepolia.arbiscan.io/
+Mainnet: 0x4dCe572b6d6d058D74C5bd158a177b507867ca86
+  ID: 42161 (0xa4b1)
+  Name: arbitrum-mainnet
+  Explorer: https://arbiscan.io/
+
+
+### Polygon 
+Testnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+  ID: 80002 (0x13882)
+  Name: polygon-testnet-amoy
+  Explorer: https://amoy.polygonscan.com/
+Mainnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+  ID: 137 (0x89)
+  Name: polygon-mainnet
+  Explorer: https://polygonscan.com/
+
+
+### Abstract - Not-Deployed, JSON-RPC-Errors
+Testnet:
+  ID: 11124 (0x2b74)
+  Name: absract-testnet-sepolia
+  Explorer: https://sepolia.abscan.org/
+Mainnet:
+  ID: 2741 (0xab5)
+  Name: abstract-mainnet
+  Explorer: https://abscan.org/
+
+
+## Compilation/Verification Settings
+License: MIT
+compiler 0.8.26+commit.8a97fa7a
+compiler EVM Version: cancun
+optimization enabled at 200 runs
 
 
 ## Contract Verification
