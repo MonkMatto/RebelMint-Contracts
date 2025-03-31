@@ -1,78 +1,130 @@
-const web3 = new Web3("https://eth-mainnet.g.alchemy.com/v2/ntDFj2vzjk0_DT1C2hmgzvbF9VMhzGW7"); // Production API link locked to domain and contracts. :)
-
-const ADDRESS = "0x74C093fD987Fff140677Aa83B6CC4680B8ef2956";
-// const mainContractAlchemy = new web3.eth.Contract(HAIKU_ABI, ADDRESS);
-
-let web3User = null; // For MetaMask or any Ethereum-compatible wallet
-let uriContractUser = null
-
-/*****************************************/
-/* Detect the MetaMask Ethereum provider */
-/*****************************************/
-async function getProvider(){
-    const provider = await detectEthereumProvider();
-    if (provider) {
-        startApp(provider);
-    } else {
-        console.log('Please install MetaMask!');
-    }
-}
-
-getProvider();
-
-function startApp(provider) {
-    if (provider !== window.ethereum) {
-        console.error('Do you have multiple wallets installed?');
-    }
-    web3User = new Web3(provider); // Initialize user's web3
-
-    // Now initialize the user's contract object
-    // uriContractUser = new web3User.eth.Contract(HAIKU_ABI, ADDRESS);
-
-    // Attach event handlers
-    ethereum.on('chainChanged', handleChainChanged);
-    ethereum.on('accountsChanged', handleAccountsChanged);
-
-    // Check for existing accounts
-    ethereum
-        .request({ method: 'eth_accounts' })
-        .then(handleAccountsChanged)
-        .catch(handleError);
-}
-
-function handleChainChanged() {
-    window.location.reload();
-}
-
+// For MetaMask wallet
+let web3User = null;
 let currentAccount = null;
 
+/**
+ * Initialize the app when the window loads
+ */
+function initApp() {
+  console.log("Initializing app...");
+
+  // Update UI elements
+  updateConnectionStatus();
+
+  // Set up event listeners for MetaMask if it exists
+  if (typeof window.ethereum !== "undefined") {
+    console.log("MetaMask is installed!");
+
+    // Listen for account changes
+    window.ethereum.on("accountsChanged", (accounts) => {
+      console.log("Accounts changed:", accounts);
+      handleAccountsChanged(accounts);
+    });
+
+    // Listen for chain changes
+    window.ethereum.on("chainChanged", () => {
+      console.log("Chain changed, reloading...");
+      window.location.reload();
+    });
+
+    // Check if already connected
+    window.ethereum
+      .request({ method: "eth_accounts" })
+      .then(handleAccountsChanged)
+      .catch((error) => {
+        console.error("Error checking accounts:", error);
+      });
+
+    // Initialize web3 with MetaMask provider
+    web3User = new Web3(window.ethereum);
+  } else {
+    console.log("MetaMask is not installed");
+  }
+}
+
+/**
+ * Handle account changes from MetaMask
+ */
 function handleAccountsChanged(accounts) {
-    if (accounts.length === 0) {
-        console.log('Please connect to MetaMask.');
-        document.getElementById("connect-button-text").innerHTML =
-          "Connect MetaMask";
-    } else if (accounts[0] !== currentAccount) {
-        currentAccount = accounts[0];
-        console.log("Account connected:", currentAccount);
-        document.getElementById("connect-button-text").innerHTML =
-          `Wallet Connected: ${currentAccount}`;
-        // if (currentAccount === "0xA6a4Fe416F8Bf46bc3bCA068aC8b1fC4DF760653") {
-        //   document.getElementById("connect-button-text").innerHTML =
-        //     "Artist Wallet Connected";
-        // } else {
-        //   document.getElementById("connect-button-text").innerHTML =
-        //     "Wrong Wallet Connected!";
-        // }
-    }
+  if (accounts.length === 0) {
+    // No accounts connected
+    currentAccount = null;
+    document.getElementById("connect-button-text").innerHTML =
+      "Connect MetaMask";
+    console.log("No accounts connected");
+  } else if (accounts[0] !== currentAccount) {
+    // New account connected
+    currentAccount = accounts[0];
+    document.getElementById(
+      "connect-button-text"
+    ).innerHTML = `Connected: ${currentAccount.substring(
+      0,
+      6
+    )}...${currentAccount.substring(38)}`;
+    console.log("Account connected:", currentAccount);
+  }
+
+  // Update deploy button status
+  updateDeployButtonStatus();
+  updateConnectionStatus();
 }
 
-function handleError(error) {
-    console.error(error);
-}
-
+/**
+ * Connect wallet when the connect button is clicked
+ */
 function connectWallet() {
-    ethereum
-        .request({ method: 'eth_requestAccounts' })
-        .then(handleAccountsChanged)
-        .catch(handleError);
+  if (typeof window.ethereum === "undefined") {
+    alert(
+      "MetaMask is not installed! Please install MetaMask to use this application."
+    );
+    return;
+  }
+
+  console.log("Requesting accounts...");
+  window.ethereum
+    .request({ method: "eth_requestAccounts" })
+    .then(handleAccountsChanged)
+    .catch((error) => {
+      if (error.code === 4001) {
+        // User rejected the request
+        console.log("User rejected connection request");
+      } else {
+        console.error("Error connecting to MetaMask:", error);
+      }
+    });
 }
+
+/**
+ * Update the deploy button status based on connection
+ */
+function updateDeployButtonStatus() {
+  const deployBtn = document.getElementById("deploy-btn");
+  if (deployBtn) {
+    deployBtn.disabled = !currentAccount;
+  }
+}
+
+/**
+ * Update connection status display
+ */
+function updateConnectionStatus() {
+  const statusElement = document.getElementById("connection-status");
+  if (statusElement) {
+    if (!window.ethereum) {
+      statusElement.innerHTML = "Status: MetaMask not detected";
+      statusElement.style.color = "red";
+    } else if (!currentAccount) {
+      statusElement.innerHTML = "Status: Not connected";
+      statusElement.style.color = "orange";
+    } else {
+      statusElement.innerHTML = `Status: Connected to ${currentAccount.substring(
+        0,
+        6
+      )}...${currentAccount.substring(38)}`;
+      statusElement.style.color = "green";
+    }
+  }
+}
+
+// Initialize the app when the page loads
+window.addEventListener("DOMContentLoaded", initApp);
