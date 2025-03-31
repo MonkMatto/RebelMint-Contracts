@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RebelMint Contract Deployer</title>
+    <meta name="description" content="EtherEthos Deployer">
+    <link rel="stylesheet" href="src/css/pico.min.css">
+    <script src="src/js/web3.min.js"></script>
+    <script src="src/js/v0j0_ABI.js"></script>
+    <script src="src/js/v0j0_CreationBytecode.js"></script>
+    <script src="src/js/detect-provider.min.js"></script>
+    <script src="src/js/handshake.js"></script>
+    <script src="src/js/interact.js"></script>
+  </head>
+  <body>
+    <header class="container">
+      <hgroup>
+        <h1>RebelMint Contract Deployer</h1>
+        <h3></h3>
+      </hgroup>
+    </header>
+    <main class="container">
+      <section id="preview">  
+        <form _lpchecked="1" id="minting-form">
+          <div class="grid">
+            <button type="button" onclick="connectWallet()"><span id="connect-button-text">Connect MetaMask</span></button>
+          </div>
+          <button type="button" onclick="deploy()"><span id="mint-next-text">Deploy</span></button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
