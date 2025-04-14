@@ -13,55 +13,55 @@ Mainnet: 0x9763141Aa64d07741b0263d8cFb273119adB839a
 
 
 ### Base
-Testnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+Testnet: 
   ID: 84532 (0x14a34)
   Name: base-testnet-sepolia
   Explorer: https://sepolia.basescan.org/
-Mainnet: 0x69Cc263973b1b22F7d81C5Be880A27CAd4c4E0De
+Mainnet: 
   ID: 8453 (0x2105)
   Name: base-mainnet
   Explorer: https://basescan.org/
 
 
 ### Optimism
-Testnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+Testnet: 
   ID: 11155420 (0xaa37dc)
   Name: op-testnet-sepolia
   Explorer: https://sepolia-optimism.etherscan.io/
-Mainnet: 0x42F6728AD23128F26248BF15F89526914b0B03aF
+Mainnet: 
   ID: 10 (0xa)
   Name: op-mainnet
   Explorer: https://optimistic.etherscan.io/
 
 
 ### Shape
-Testnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+Testnet: 
   ID: 11011 (0x2b03)
   Name: shape-testnet-sepolia
   Explorer: https://explorer-sepolia.shape.network/
-Mainnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+Mainnet: 
   ID: 360 (0x168)
   Name: shape-mainnet
   Explorer: https://shapescan.xyz/
 
 
 ### Arbitrum 
-Testnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+Testnet: 
   ID: 421614 (0x66eee)
   Name: arbitrum-testnet-sepolia
   Explorer: https://sepolia.arbiscan.io/
-Mainnet: 0x4dCe572b6d6d058D74C5bd158a177b507867ca86
+Mainnet: 
   ID: 42161 (0xa4b1)
   Name: arbitrum-mainnet
   Explorer: https://arbiscan.io/
 
 
 ### Polygon 
-Testnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+Testnet: 
   ID: 80002 (0x13882)
   Name: polygon-testnet-amoy
   Explorer: https://amoy.polygonscan.com/
-Mainnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+Mainnet: 
   ID: 137 (0x89)
   Name: polygon-mainnet
   Explorer: https://polygonscan.com/

@@ -247,46 +247,49 @@ contract RebelMint_v0j0 is
     /// @param id ID of the token
     /// @param amount Amount of the token to mint
     function mint(address to, uint256 id, uint256 amount) external payable {
-        require(id < allTokenData.length, "Token ID does not exist");
         require(allTokenData[id].isTokenSaleActive, "Sale is closed");
-        require(
-            totalSupply(id) + amount <= allTokenData[id].maxSupply,
-            "Exceeds max supply"
-        );
+        _preMintChecks(id, amount);
         address currencyAddress = allTokenData[id].currencyAddress;
         uint256 totalCost = allTokenData[id].tokenCost * amount;
         address mintFundsReceiver = getFundsReceiver(id);
-        if (msg.sender != owner()) {
-            if (currencyAddress == address(0)) {
-                // Use ETH for payment
-                require(msg.value == totalCost, "Incorrect value sent");
-                (bool success, ) = payable(mintFundsReceiver).call{
-                    value: msg.value
-                }("");
-                require(success, "ETH transfer failed");
-            } else {
-                // Use ERC-20 token for payment
-                I_ERC20 currency = I_ERC20(currencyAddress);
-                require(
-                    currency.allowance(msg.sender, address(this)) >= totalCost,
-                    "ERC20 allowance too low"
-                );
-                require(
-                    currency.balanceOf(msg.sender) >= totalCost,
-                    "ERC20 balance too low"
-                );
-                require(
-                    currency.transferFrom(msg.sender, mintFundsReceiver, totalCost),
-                    "ERC20 transfer failed"
-                );
-            }
+        if (currencyAddress == address(0)) {
+            // Use ETH for payment
+            require(msg.value == totalCost, "Incorrect value sent");
+            (bool success, ) = payable(mintFundsReceiver).call{
+                value: msg.value
+            }("");
+            require(success, "ETH transfer failed");
+        } else {
+            // Use ERC-20 token for payment
+            I_ERC20 currency = I_ERC20(currencyAddress);
+            require(
+                currency.allowance(msg.sender, address(this)) >= totalCost,
+                "ERC20 allowance too low"
+            );
+            require(
+                currency.balanceOf(msg.sender) >= totalCost,
+                "ERC20 balance too low"
+            );
+            require(
+                currency.transferFrom(msg.sender, mintFundsReceiver, totalCost),
+                "ERC20 transfer failed"
+            );
         }
 
         _mint(to, id, amount, "");
+        _postMintChecks(id);
+    }
 
-        if (totalSupply(id) == allTokenData[id].maxSupply) {
-            allTokenData[id].isTokenSaleActive = false;
-        }
+    /// @notice Owner-only minting function that doesn't accept payment
+    /// @dev This function is for minting tokens without requiring payment and
+    /// does not require the token sale to be active.
+    /// @param to Address to receive the token
+    /// @param id ID of the token
+    /// @param amount Amount of the token to mint
+    function ownerMint(address to, uint256 id, uint256 amount) public onlyOwner {
+        _preMintChecks(id, amount);
+        _mint(to, id, amount, "");
+        _postMintChecks(id);
     }
 
     /// @notice Returns the number of tokens created in the collection
@@ -393,20 +396,6 @@ contract RebelMint_v0j0 is
             super.supportsInterface(interfaceId);
     }
 
-    /// @notice Updates the token balances
-    /// @param from Address sending the tokens
-    /// @param to Address receiving the tokens
-    /// @param ids Array of token IDs being transferred
-    /// @param values Array of amounts of tokens being transferred
-    function _update(
-        address from,
-        address to,
-        uint256[] memory ids,
-        uint256[] memory values
-    ) internal override(ERC1155, ERC1155Supply) {
-        super._update(from, to, ids, values);
-    }
-
     /// @notice Returns the URI for a specific token
     /// @param id ID of the token
     /// @return URI of the token
@@ -470,5 +459,42 @@ contract RebelMint_v0j0 is
             decimals = 18;
         }
         return decimals;
+    }
+
+    /// @notice Internal function to perform pre-mint checks
+    /// @dev Requires that the token ID exists and that the total supply after 
+    /// minting would not exceed the max supply.
+    /// @param id ID of the token
+    /// @param amount Amount of the token to mint
+    function _preMintChecks(uint256 id, uint256 amount) internal view {
+        require(id < allTokenData.length, "Token ID does not exist");
+        require(
+            totalSupply(id) + amount <= allTokenData[id].maxSupply,
+            "Exceeds max supply"
+        );
+    }
+
+    /// @notice Internal function to perform post-mint checks
+    /// @dev If the total supply of the token equals the max supply, 
+    /// the token sale is deactivated.
+    /// @param id ID of the token
+    function _postMintChecks(uint256 id) internal {
+        if (totalSupply(id) == allTokenData[id].maxSupply) {
+            allTokenData[id].isTokenSaleActive = false;
+        }
+    }
+
+    /// @notice Updates the token balances
+    /// @param from Address sending the tokens
+    /// @param to Address receiving the tokens
+    /// @param ids Array of token IDs being transferred
+    /// @param values Array of amounts of tokens being transferred
+    function _update(
+        address from,
+        address to,
+        uint256[] memory ids,
+        uint256[] memory values
+    ) internal override(ERC1155, ERC1155Supply) {
+        super._update(from, to, ids, values);
     }
 }
