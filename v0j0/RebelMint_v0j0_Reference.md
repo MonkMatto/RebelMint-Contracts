@@ -56,7 +56,7 @@ Mainnet: 0x7f463b874eC264dC7BD8C780f5790b4Fc371F11f
   Explorer: https://arbiscan.io/
 
 
-### Polygon 
+### Polygon *(base currency: POL)
 Testnet: 0x6FFdEF0A5dDFF6AF79E6A2B2e77A081D170C8d4B
   ID: 80002 (0x13882)
   Name: polygon-testnet-amoy
@@ -65,7 +65,19 @@ Mainnet: 0x42F6728AD23128F26248BF15F89526914b0B03aF
   ID: 137 (0x89)
   Name: polygon-mainnet
   Explorer: https://polygonscan.com/
-  
+
+
+### Zora
+Testnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+  ID: 999999999 (0x3b9ac9ff)
+  Name: zora-sepolia
+  Explorer: https://sepolia.explorer.zora.energy/
+Mainnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
+  ID: 7777777 (0x76adf1)
+  Name: zora-mainnet
+  Explorer: https://explorer.zora.energy/
+
+
 
 ## Compilation/Verification Settings
 License: MIT
