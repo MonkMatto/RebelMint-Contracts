@@ -2,11 +2,11 @@
 
 ## Template Deployments
 ### Ethereum
-Testnet: 0xBb657C226D81F967F5C9133a1663d47E9B73981B
+Testnet: 0x1ffc13d77Ee2fd093D3F2E238380be43e751698a
   ID: 11155111
   Name: ethereum-testnet-sepolia
   Explorer: https://sepolia.etherscan.io/
-Mainnet: 0x9763141Aa64d07741b0263d8cFb273119adB839a
+Mainnet: 
   ID: 1 (0x1)
   Name: ethereum-mainnet
   Explorer: https://etherscan.io/
