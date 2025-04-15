@@ -6,77 +6,66 @@ Testnet: 0x1ffc13d77Ee2fd093D3F2E238380be43e751698a
   ID: 11155111
   Name: ethereum-testnet-sepolia
   Explorer: https://sepolia.etherscan.io/
-Mainnet: 
+Mainnet: 0x6cD252548d3F12f6D3AC5dbBB24586B173796204
   ID: 1 (0x1)
   Name: ethereum-mainnet
   Explorer: https://etherscan.io/
 
 
 ### Base
-Testnet: 
+Testnet: 0x7f463b874eC264dC7BD8C780f5790b4Fc371F11f
   ID: 84532 (0x14a34)
   Name: base-testnet-sepolia
   Explorer: https://sepolia.basescan.org/
-Mainnet: 
+Mainnet: 0xd3cc62630c584fee8aa27c64a576b79aad5aa031
   ID: 8453 (0x2105)
   Name: base-mainnet
   Explorer: https://basescan.org/
 
 
 ### Optimism
-Testnet: 
+Testnet: 0x42F6728AD23128F26248BF15F89526914b0B03aF
   ID: 11155420 (0xaa37dc)
   Name: op-testnet-sepolia
   Explorer: https://sepolia-optimism.etherscan.io/
-Mainnet: 
+Mainnet: 0xaFb9c739A6b667E4E1FE145aC3c2FC35e1766508
   ID: 10 (0xa)
   Name: op-mainnet
   Explorer: https://optimistic.etherscan.io/
 
 
 ### Shape
-Testnet: 
+Testnet: 0x6FFdEF0A5dDFF6AF79E6A2B2e77A081D170C8d4B
   ID: 11011 (0x2b03)
   Name: shape-testnet-sepolia
   Explorer: https://explorer-sepolia.shape.network/
-Mainnet: 
+Mainnet: 0x6FFdEF0A5dDFF6AF79E6A2B2e77A081D170C8d4B
   ID: 360 (0x168)
   Name: shape-mainnet
   Explorer: https://shapescan.xyz/
 
 
 ### Arbitrum 
-Testnet: 
+Testnet: 0x6FFdEF0A5dDFF6AF79E6A2B2e77A081D170C8d4B
   ID: 421614 (0x66eee)
   Name: arbitrum-testnet-sepolia
   Explorer: https://sepolia.arbiscan.io/
-Mainnet: 
+Mainnet: 0x7f463b874eC264dC7BD8C780f5790b4Fc371F11f
   ID: 42161 (0xa4b1)
   Name: arbitrum-mainnet
   Explorer: https://arbiscan.io/
 
 
 ### Polygon 
-Testnet: 
+Testnet: 0x6FFdEF0A5dDFF6AF79E6A2B2e77A081D170C8d4B
   ID: 80002 (0x13882)
   Name: polygon-testnet-amoy
   Explorer: https://amoy.polygonscan.com/
-Mainnet: 
+Mainnet: 0x42F6728AD23128F26248BF15F89526914b0B03aF
   ID: 137 (0x89)
   Name: polygon-mainnet
   Explorer: https://polygonscan.com/
-
-
-### Abstract - Not-Deployed, JSON-RPC-Errors
-Testnet:
-  ID: 11124 (0x2b74)
-  Name: absract-testnet-sepolia
-  Explorer: https://sepolia.abscan.org/
-Mainnet:
-  ID: 2741 (0xab5)
-  Name: abstract-mainnet
-  Explorer: https://abscan.org/
-
+  
 
 ## Compilation/Verification Settings
 License: MIT
