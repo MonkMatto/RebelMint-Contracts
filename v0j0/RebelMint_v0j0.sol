@@ -1110,13 +1110,6 @@ interface IERC1155Errors {
 
 pragma solidity ^0.8.20;
 
-
-
-
-
-
-
-
 /**
  * @dev Implementation of the basic standard multi-token.
  * See https://eips.ethereum.org/EIPS/eip-1155
