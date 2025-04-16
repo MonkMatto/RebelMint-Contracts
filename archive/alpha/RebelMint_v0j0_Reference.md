@@ -1,4 +1,4 @@
-# RebelMint Contract Version 0 JSON 0 Notes
+# RebelMint ALPHA Contract Version 0 JSON 0 Notes 
 
 ## Template Deployments
 ### Ethereum
