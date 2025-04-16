@@ -1,6 +1,6 @@
 # RebelMint Contract Version 0 JSON 0 Notes
 
-## Template Deployments
+## RebelMint Poster (Template Deployments)
 ### Ethereum
 Testnet: 0x1ffc13d77Ee2fd093D3F2E238380be43e751698a
   ID: 11155111
@@ -56,7 +56,7 @@ Mainnet: 0x7f463b874eC264dC7BD8C780f5790b4Fc371F11f
   Explorer: https://arbiscan.io/
 
 
-### Polygon *(base currency: POL)
+### Polygon *(base currency: POL)*
 Testnet: 0x6FFdEF0A5dDFF6AF79E6A2B2e77A081D170C8d4B
   ID: 80002 (0x13882)
   Name: polygon-testnet-amoy
@@ -76,7 +76,6 @@ Mainnet: 0xA97A9C1cd3e6d0bB82c571c466AaDa2578dF731C
   ID: 7777777 (0x76adf1)
   Name: zora-mainnet
   Explorer: https://explorer.zora.energy/
-
 
 
 ## Compilation/Verification Settings
@@ -227,3 +226,22 @@ Deployed Bytecode from the verified contract should match the DeployedBytecodeRe
   ]
 }
 ```
+
+## POSTER NFT ASSET LINKS
+### Poster Images 
+- arb: https://arweave.net/Pb8I1FkpvsCg867dCW8Em8ifayRsUx5SS4cYHYOCHEY
+- base: https://arweave.net/xkVmZCh3hJa2rMklYDx9nYNAVp6d5GDtLmjTkIPnbOo
+- eth: https://arweave.net/-CuyqvuUCqwETMTuKsJlK7MaCriXo6i3n9Xpx0fmLrM
+- op: https://arweave.net/5sxxpbedbqg3Y1ULNq8TQN_U8wqvTz4eja6VdjLI2EQ
+- pol: https://arweave.net/UFLCLjpnVQTSk8nBQm0pr3z4Sm9qOChgJaMgu7Z4KRc
+- shape: https://arweave.net/O8lQv-SY-Soi8ZpMo2PygIPZYmC7kxfHN-rbIrlWlX8
+- zora: https://arweave.net/kARzGQF7HNwOi0_bm9qO7wWS_2O3toYZBhc7sxfHLU8
+
+### Poster Metadata JSON
+- eth: https://arweave.net/rTznvJmUrMLzaBqfc7HCHgKlzFVxWymyg87D70aRQjY
+- base: https://arweave.net/ifuYlGZhI7dr8-GBxQ9qgCWptElpnBgM7MKjTE-Vv-A
+- Arb: https://arweave.net/SCDao2Sz8mPducRK1wKxQ1qUHNff1aQB2L6p-XUHtTs
+- Op: https://arweave.net/qs0MP7qg1Kpq-ZUuxSfYemDbgq3Ylq5lLE6cUJCgnWM
+- pol: https://arweave.net/fWBjS-XF1qjVq082TBZxZTMyUcoFcxY8ethHLns7ZSQ
+- shape: https://arweave.net/2rWhtCr200ZP8c3DeKY4SvA-tgqX7_6XvSeCNGBc-QE
+- zora: https://arweave.net/2N93NMtTBC_IciqVx7SUYn65TSu-JxaJjg7843I3bh8
